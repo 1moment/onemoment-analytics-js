@@ -1,0 +1,34 @@
+{
+  "name": "onemoment-analytics-js",
+  "version": "0.1.0",
+  "main": "lib/index.js",
+  "repository": "https://github.com/ClaudeSeo/onemoment-analytics-js.git",
+  "author": "ClaudeSeo <ehdaudtj@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint --ext .js .",
+    "dev": "webpack-dev-server --progress --inline --config build/webpack.dev.config.js",
+    "build": "webpack --config build/webpack.prod.config.js"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^4.8.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.2.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "html-webpack-plugin": "^2.30.1",
+    "webpack": "^3.7.1",
+    "webpack-dev-server": "^2.9.1",
+    "webpack-merge": "^4.1.0"
+  }
+}
