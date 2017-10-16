@@ -4,7 +4,7 @@ var baseWebpackConfig = require('./webpack.base.config')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = merge(baseWebpackConfig, {
-  devtool: 'inline-source-map',
+  devtool: 'cheap-module-source-map',
   devServer: {
     historyApiFallback: true,
     compress: true,
