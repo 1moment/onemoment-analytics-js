@@ -5,6 +5,12 @@
     <!-- <script src='./dist/oa.js'></script> -->
   </head>
   <body>
-    <button onclick="oa('send', 'Click', {'Text': 'Simple Button Click'})">Click</button>
+    <button id='test'>Click</button>
+    <script>
+      var c = document.getElementById('test')
+      c.addEventListener('click', function (evt) {
+        oa('send', 'events', {'selector': '#test', 'name': 'Click'})
+      });
+      </script>
   </body>
 </html>
