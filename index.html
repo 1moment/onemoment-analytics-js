@@ -9,7 +9,7 @@
     <script>
       var c = document.getElementById('test')
       c.addEventListener('click', function (evt) {
-        oa('send', 'events', {'selector': '#test', 'name': 'Click'})
+        oa('send', 'event', 'Button', 'Click', null, null, {'selector': '#test'})
       });
       </script>
   </body>
