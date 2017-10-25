@@ -22,6 +22,9 @@ module.exports = merge(baseWebpackConfig, {
         comments: false
       }
     }),
-    new webpack.HashedModuleIdsPlugin()
+    new webpack.HashedModuleIdsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env.SERVER_ADDR': '"https://oa.1moment.co.kr"'
+    })
   ]
 })

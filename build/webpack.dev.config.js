@@ -17,6 +17,9 @@ module.exports = merge(baseWebpackConfig, {
       filename: 'index.html',
       template: 'index.html',
       inject: true
+    }),
+    new webpack.DefinePlugin({
+      'process.env.SERVER_ADDR': '"http://127.0.0.1:3000"'
     })
   ]
 })
