@@ -6,7 +6,7 @@
   "author": "ClaudeSeo <ehdaudtj@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint --ext .js .",
+    "lint": "eslint --ext .js lib",
     "dev": "webpack-dev-server --progress --inline --config build/webpack.dev.config.js",
     "build": "webpack --config build/webpack.prod.config.js"
   },
