@@ -2,20 +2,86 @@
 <html>
   <head>
     <meta charset='utf-8'>
-    <!-- <script src='./dist/oa.js'></script> -->
   </head>
   <body>
-    <button id='test'>Click</button>
+    <button id='click-event'>click event</button>
+    <button id='add-to-cart'>add To Cart</button>
+    <button id='remove-from-cart'>remove From Cart</button>
+    <button id='checkout'>checkout</button>
+    <button id='purchase'>purchase</button>
     <script>
-      var c = document.getElementById('test')
+      var c = document.getElementById('click-event')
       c.addEventListener('click', function (evt) {
-        oa('send', 'event', 'Button', 'Click', null, null, {'selector': '#test'})
+        oa('send', 'event', '버튼', 'click', 'click event')
       });
+
+      var add = document.getElementById('add-to-cart')
+      add.addEventListener('click', function (evt) {
+        oa('ec:addProduct', {
+          name: '메이플 로사 & 초코 케이크',
+          category: '꽃다발',
+          cost_price: 51000,
+          original_price: 54000
+        })
+        oa('ec:setAction', 'addToCart')
+        oa('send', 'event', 'Ecommerce', 'addToCart')
+      })
+
+      var remove = document.getElementById('remove-from-cart')
+      remove.addEventListener('click', function (evt) {
+        oa('ec:addProduct', {
+          name: '메이플 로사 & 초코 케이크',
+          category: '꽃다발',
+          cost_price: 51000,
+          original_price: 54000
+        })
+        oa('ec:setAction', 'removeFromCart')
+        oa('send', 'event', 'Ecommerce', 'removeFromCart')
+      })
+
+      var checkout = document.getElementById('checkout')
+      checkout.addEventListener('click', function (evt) {
+        oa('ec:addProduct', {
+          name: '메이플 로사 & 초코 케이크',
+          category: '꽃다발',
+          cost_price: 51000,
+          original_price: 54000
+        })
+        oa('ec:setAction', 'checkout', {'step': 1})
+        oa('send', 'event', 'Ecommerce', 'checkout')
+      })
+
+      var purchase = document.getElementById('purchase')
+      purchase.addEventListener('click', function (evt) {
+        oa('ec:addProduct', {
+          name: '메이플 로사 & 초코 케이크',
+          category: '꽃다발',
+          cost_price: 51000,
+          original_price: 54000,
+          quantity: 1
+        })
+        oa('ec:setAction', 'purchase', {
+          shipping_method: '서울당일배송',
+          shipping_price: 0,
+          payment_method: '간편결제',
+          point: 0,
+          order_number: 22944,
+          selling_price: 51000,
+          payment_price: 51000
+        })
+        oa('send', 'event', 'Ecommerce', 'purchase')
+      })
       </script>
       <script>
       window._oaq = window._oaq || []
+      window._oaq.push(['ec:addProduct', {
+        name: '메이플 로사 & 초코 케이크',
+        category: '꽃다발',
+        cost_price: 51000,
+        original_price: 54000
+      }])
+      window._oaq.push(['ec:setAction', 'detail'])
       window._oaq.push(['send', 'pageview', null])
-      window._oaq.push(['send', 'event', ['상단메뉴', 'click', 'asdf']])
       </script>
   </body>
 </html>
