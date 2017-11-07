@@ -5,6 +5,7 @@
   </head>
   <body>
     <button id='click-event'>click event</button>
+    <button id='detail-view'>Detail View</button>
     <button id='add-to-cart'>add To Cart</button>
     <button id='remove-from-cart'>remove From Cart</button>
     <button id='checkout'>checkout</button>
@@ -14,6 +15,18 @@
       c.addEventListener('click', function (evt) {
         oa('send', 'event', '버튼', 'click', 'click event')
       });
+
+      var detail = document.getElementById('detail-view')
+      detail.addEventListener('click', function (evt) {
+        oa('ec:addProduct', {
+          name: '메이플 로사 & 초코 케이크',
+          category: '꽃다발',
+          cost_price: 51000,
+          original_price: 54000
+        })
+        oa('ec:setAction', 'detail')
+        oa('send', 'event', 'Ecommerce', 'impression')
+      })
 
       var add = document.getElementById('add-to-cart')
       add.addEventListener('click', function (evt) {
@@ -65,23 +78,28 @@
           shipping_price: 0,
           payment_method: '간편결제',
           point: 0,
+          promotion_name: null,
+          promotion_price: 0,
           order_number: 22944,
           selling_price: 51000,
-          payment_price: 51000
+          payment_price: 51000,
+          addr: '전라북도 고창군 고창읍 중앙로 191'
         })
         oa('send', 'event', 'Ecommerce', 'purchase')
       })
       </script>
       <script>
-      window._oaq = window._oaq || []
-      window._oaq.push(['ec:addProduct', {
-        name: '메이플 로사 & 초코 케이크',
-        category: '꽃다발',
-        cost_price: 51000,
-        original_price: 54000
-      }])
-      window._oaq.push(['ec:setAction', 'detail'])
-      window._oaq.push(['send', 'pageview', null])
+      /*
+        window._oaq = window._oaq || []
+        window._oaq.push(['ec:addProduct', {
+          name: '메이플 로사 & 초코 케이크',
+          category: '꽃다발',
+          cost_price: 51000,
+          original_price: 54000
+        }])
+        window._oaq.push(['ec:setAction', 'detail'])
+        window._oaq.push(['send', 'pageview', null])
+      */
       </script>
   </body>
 </html>
