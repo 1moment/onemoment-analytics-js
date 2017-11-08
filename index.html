@@ -100,6 +100,8 @@
         window._oaq.push(['ec:setAction', 'detail'])
         window._oaq.push(['send', 'pageview', null])
       */
+      window._oaq = window._oaq || []
+      window._oaq.push(['send', 'pageview', null])
       </script>
   </body>
 </html>
