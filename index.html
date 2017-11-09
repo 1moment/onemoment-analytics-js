@@ -34,7 +34,8 @@
           name: '메이플 로사 & 초코 케이크',
           category: '꽃다발',
           cost_price: 51000,
-          original_price: 54000
+          original_price: 54000,
+          quantity: 2
         })
         oa('ec:setAction', 'addToCart')
         oa('send', 'event', 'Ecommerce', 'addToCart')
@@ -46,7 +47,8 @@
           name: '메이플 로사 & 초코 케이크',
           category: '꽃다발',
           cost_price: 51000,
-          original_price: 54000
+          original_price: 54000,
+          quantity: 1
         })
         oa('ec:setAction', 'removeFromCart')
         oa('send', 'event', 'Ecommerce', 'removeFromCart')
@@ -58,7 +60,8 @@
           name: '메이플 로사 & 초코 케이크',
           category: '꽃다발',
           cost_price: 51000,
-          original_price: 54000
+          original_price: 54000,
+          quantity: 1
         })
         oa('ec:setAction', 'checkout', {'step': 1})
         oa('send', 'event', 'Ecommerce', 'checkout')
